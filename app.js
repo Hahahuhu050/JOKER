@@ -92,6 +92,12 @@ speechSynthesis.speak(
 
 function startGame(){
 
+    alert("START JALAN");
+
+    const p1 =
+        document.getElementById(
+            "player1"
+        ).value.trim();
 ```
 const p1 =
     document.getElementById(
