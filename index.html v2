@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Score Cekih</title>
+
+<meta name="theme-color" content="#111827">
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/logo.png">
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+```
+<div>
+    <h1>Score Cekih</h1>
+    <p>By Sadewa Corp</p>
+</div>
+
+<div class="topbar-actions">
+
+    <button id="themeBtn">
+        🌙
+    </button>
+
+    <button id="fullscreenBtn">
+        ⛶
+    </button>
+
+</div>
+```
+
+</header>
+
+<!-- SETUP -->
+
+<section id="setupScreen" class="screen">
+
+```
+<h2>Mulai Permainan</h2>
+
+<div class="setup-card">
+
+    <input
+        type="text"
+        id="player1"
+        placeholder="Nama Pemain A"
+    >
+
+    <input
+        type="text"
+        id="player2"
+        placeholder="Nama Pemain B"
+    >
+
+    <input
+        type="text"
+        id="player3"
+        placeholder="Nama Pemain C"
+    >
+
+    <input
+        type="text"
+        id="player4"
+        placeholder="Nama Pemain D"
+    >
+
+    <label>
+        Target Menang
+    </label>
+
+    <input
+        type="number"
+        id="targetScore"
+        value="1000"
+        min="100"
+    >
+
+    <button id="startGame">
+        MULAI PERMAINAN
+    </button>
+
+</div>
+```
+
+</section>
+
+<!-- GAME -->
+
+<section
+    id="gameScreen"
+    class="screen hidden"
+>
+
+```
+<div class="round-box">
+
+    <h2>
+        Ronde
+        <span id="roundNumber">
+            1
+        </span>
+    </h2>
+
+</div>
+
+<!-- SCORE PLAYER -->
+
+<div
+    id="playersContainer"
+    class="players-grid"
+></div>
+
+<!-- INPUT RONDE -->
+
+<div class="round-input-card">
+
+    <h3>
+        Input Hasil Ronde
+    </h3>
+
+    <div class="round-input-grid">
+
+        <input
+            type="number"
+            id="roundP1"
+            placeholder="Poin Pemain A"
+        >
+
+        <input
+            type="number"
+            id="roundP2"
+            placeholder="Poin Pemain B"
+        >
+
+        <input
+            type="number"
+            id="roundP3"
+            placeholder="Poin Pemain C"
+        >
+
+        <input
+            type="number"
+            id="roundP4"
+            placeholder="Poin Pemain D"
+        >
+
+    </div>
+
+    <button id="saveRoundBtn">
+        SIMPAN RONDE
+    </button>
+
+</div>
+
+<!-- TAB -->
+
+<div class="tabs">
+
+    <button
+        class="tab-btn active"
+        data-tab="ranking"
+    >
+        Ranking
+    </button>
+
+    <button
+        class="tab-btn"
+        data-tab="history"
+    >
+        History
+    </button>
+
+    <button
+        class="tab-btn"
+        data-tab="achievement"
+    >
+        Achievement
+    </button>
+
+    <button
+        class="tab-btn"
+        data-tab="statistics"
+    >
+        Statistik
+    </button>
+
+</div>
+
+<!-- TAB CONTENT -->
+
+<div
+    id="rankingTab"
+    class="tab-content"
+>
+    <div id="rankingList"></div>
+</div>
+
+<div
+    id="historyTab"
+    class="tab-content hidden"
+>
+    <div id="historyList"></div>
+</div>
+
+<div
+    id="achievementTab"
+    class="tab-content hidden"
+>
+    <div id="achievementList"></div>
+</div>
+
+<div
+    id="statisticsTab"
+    class="tab-content hidden"
+>
+    <div id="statisticsList"></div>
+
+    <canvas
+        id="scoreChart"
+    ></canvas>
+</div>
+
+<!-- CONTROL -->
+
+<div class="controls">
+
+    <button id="undoBtn">
+        Undo
+    </button>
+
+    <button id="nextRoundBtn">
+        Next Ronde
+    </button>
+
+    <button id="screenshotBtn">
+        Screenshot
+    </button>
+
+    <button id="resetBtn">
+        Reset
+    </button>
+
+</div>
+```
+
+</section>
+
+<!-- EFFECT -->
+
+<div id="fireEffect"></div>
+
+<div id="starEffect"></div>
+
+<div id="loserEffect"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
