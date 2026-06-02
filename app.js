@@ -33,7 +33,6 @@ JSON.stringify(gameData)
 
 function loadData(){
 
-```
 const saved =
     localStorage.getItem(
         "scoreCekihData"
@@ -62,13 +61,11 @@ renderRanking();
 renderHistory();
 renderAchievements();
 renderStatistics();
-```
 
 }
 
 function speak(text){
 
-```
 if(
     !window.speechSynthesis
 ) return;
@@ -86,7 +83,7 @@ utterance.rate = 1;
 speechSynthesis.speak(
     utterance
 );
-```
+
 
 }
 
@@ -98,7 +95,7 @@ function startGame(){
         document.getElementById(
             "player1"
         ).value.trim();
-```
+
 const p1 =
     document.getElementById(
         "player1"
@@ -187,13 +184,12 @@ renderRanking();
 renderHistory();
 renderAchievements();
 renderStatistics();
-```
+
 
 }
 
 function renderPlayers(){
 
-```
 const container =
     document.getElementById(
         "playersContainer"
@@ -223,13 +219,11 @@ gameData.players
     `;
 
 });
-```
 
 }
 
 function renderRanking(){
 
-```
 const ranking =
     [...gameData.players]
     .sort(
@@ -259,13 +253,12 @@ ranking.forEach(
     `;
 
 });
-```
 
 }
 
 function renderHistory(){
 
-```
+
 const box =
     document.getElementById(
         "historyList"
@@ -286,13 +279,11 @@ box.innerHTML = "";
     `;
 
 });
-```
 
 }
 
 function checkWinner(player){
 
-```
 if(
     player.score <
     gameData.targetScore
@@ -314,7 +305,6 @@ gameData.players
     p.score = 0;
 
 });
-```
 
 }
 
@@ -323,7 +313,6 @@ playerId,
 oldScores
 ){
 
-```
 if(
     gameData.round <= 1
 ) return;
@@ -406,13 +395,11 @@ if(
     );
 
 }
-```
 
 }
 
 function saveRound(){
 
-```
 undoStack.push(
     JSON.stringify(
         gameData
@@ -528,13 +515,11 @@ document
 .getElementById(
     "roundP4"
 ).value = "";
-```
 
   }
 
 function renderAchievements(){
 
-```
 const box =
     document.getElementById(
         "achievementList"
@@ -626,13 +611,11 @@ gameData.players.forEach(
     `;
 
 });
-```
 
 }
 
 function renderStatistics(){
 
-```
 const box =
     document.getElementById(
         "statisticsList"
@@ -684,13 +667,11 @@ gameData.players.forEach(
     `;
 
 });
-```
 
 }
 
 function nextRound(){
 
-```
 gameData.round++;
 
 document
@@ -707,13 +688,11 @@ gameData.history.push(
 saveData();
 
 renderHistory();
-```
 
 }
 
 function undoAction(){
 
-```
 if(
     undoStack.length===0
 ) return;
@@ -730,13 +709,11 @@ renderRanking();
 renderHistory();
 renderAchievements();
 renderStatistics();
-```
 
 }
 
 function resetGame(){
 
-```
 if(
     !confirm(
         "Reset permainan?"
@@ -748,23 +725,19 @@ localStorage.removeItem(
 );
 
 location.reload();
-```
 
 }
 
 function toggleTheme(){
 
-```
 document.body.classList.toggle(
     "light-mode"
 );
-```
 
 }
 
 function toggleFullscreen(){
 
-```
 if(
     !document.fullscreenElement
 ){
@@ -779,7 +752,6 @@ if(
         .exitFullscreen();
 
 }
-```
 
 }
 
@@ -789,7 +761,6 @@ document
 )
 .forEach(btn=>{
 
-```
 btn.addEventListener(
     "click",
     ()=>{
@@ -829,7 +800,6 @@ btn.addEventListener(
 
     }
 );
-```
 
 });
 
